@@ -47,3 +47,15 @@ print("{0:=^25}".format("DataFrame 카운트"))
 print(df.count())
 print(df["year"].count())
 print(df["ETC"].count())	#	카운트 시 None값은 제외처리
+
+#	Column 추가
+print("{0:=^25}".format("Column 추가"))
+df["AddCol"] = df["GDP rate"] * 10
+df["AddCol2"] = ""
+print(df)
+
+#	Row 추가
+print("{0:=^25}".format("Row 추가"))
+ohlc = [2019, 3.5, "3.210M", "나나나", None, None]
+df.loc["2019"] = pd.Series(data=ohlc)
+print(df)
